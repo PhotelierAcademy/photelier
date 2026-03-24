@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>会社概要 | Photelier</title>
+  <meta name="description" content="株式会社Photelier（フォトリエ）の会社概要ページです。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400&family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .about-hero {
+      background: var(--bg-hero);
+      padding: 8rem 0 4rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .about-hero__en {
+      font-family: var(--font-serif);
+      font-size: .75rem;
+      letter-spacing: .25em;
+      color: var(--blue);
+      display: block;
+      margin-bottom: .6rem;
+    }
+    .about-hero__title {
+      font-family: var(--font-jp);
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: .1em;
+    }
+
+    .about-section { padding: 5rem 0; }
+
+    /* Mission/Vision/Value */
+    .mvv { background: #fff; }
+    .mvv__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .mvv__card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 2rem 1.8rem;
+      border-radius: 2px;
+    }
+    .mvv__label {
+      font-family: var(--font-serif);
+      font-size: .75rem;
+      letter-spacing: .2em;
+      color: var(--blue);
+      display: block;
+      margin-bottom: .8rem;
+    }
+    .mvv__text {
+      font-family: var(--font-jp);
+      font-size: .9rem;
+      line-height: 1.9;
+      color: var(--text);
+      font-weight: 300;
+    }
+
+    /* Greeting */
+    .greeting { background: var(--bg-alt); }
+    .greeting__text {
+      font-family: var(--font-jp);
+      font-size: .95rem;
+      line-height: 2;
+      color: var(--text);
+      font-weight: 300;
+      max-width: 680px;
+      margin: 2rem auto 0;
+    }
+
+    /* Value list */
+    .value { background: #fff; }
+    .value__list {
+      list-style: none;
+      padding: 0;
+      margin: 2rem auto 0;
+      max-width: 600px;
+    }
+    .value__list li {
+      font-family: var(--font-jp);
+      font-size: .9rem;
+      line-height: 1.8;
+      color: var(--text);
+      font-weight: 300;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .value__list li:last-child { border-bottom: none; }
+    .value__num {
+      font-family: var(--font-serif);
+      color: var(--blue);
+      font-size: .8rem;
+      letter-spacing: .1em;
+      flex-shrink: 0;
+      margin-top: .15rem;
+    }
+
+    /* Company table */
+    .company { background: var(--bg-alt); }
+    .company__table {
+      width: 100%;
+      max-width: 680px;
+      margin: 2.5rem auto 0;
+      border-collapse: collapse;
+    }
+    .company__table tr {
+      border-bottom: 1px solid var(--border);
+    }
+    .company__table tr:first-child {
+      border-top: 1px solid var(--border);
+    }
+    .company__table th {
+      font-family: var(--font-jp);
+      font-size: .8rem;
+      font-weight: 400;
+      color: var(--blue-dark);
+      letter-spacing: .08em;
+      padding: 1.2rem 1.5rem 1.2rem 0;
+      text-align: left;
+      vertical-align: top;
+      width: 160px;
+      white-space: nowrap;
+    }
+    .company__table td {
+      font-family: var(--font-jp);
+      font-size: .88rem;
+      color: var(--text);
+      font-weight: 300;
+      padding: 1.2rem 0;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 680px) {
+      .mvv__grid { grid-template-columns: 1fr; }
+      .company__table th {
+        width: 120px;
+        padding-right: 1rem;
+        font-size: .75rem;
+      }
+      .company__table td { font-size: .82rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Photelier</a>
+      <button class="nav__hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__menu" id="menu">
+        <li>
+          <a href="index.html#services">
+            <span class="ja">サービス</span>
+            <span class="en">Services</span>
+          </a>
+        </li>
+        <li>
+          <a href="index.html#works">
+            <span class="ja">撮影事例</span>
+            <span class="en">Works</span>
+          </a>
+        </li>
+        <li>
+          <a href="index.html#faq">
+            <span class="ja">よくある質問</span>
+            <span class="en">FAQ</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/photostudio_fairytale/" target="_blank" rel="noopener" aria-label="Instagram" class="nav__insta-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="index.html#contact" class="nav__cta">
+            <span class="ja">お問い合わせ</span>
+            <span class="en">Contact</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="about-hero">
+    <span class="about-hero__en">About</span>
+    <h1 class="about-hero__title">会社概要</h1>
+  </div>
+
+  <!-- Greeting -->
+  <section class="about-section greeting">
+    <div class="container">
+      <h2 class="section__title">ご挨拶</h2>
+      <p class="greeting__text">
+        株式会社Photelier（フォトリエ）は、<br>
+        「"わたし"として人生を自由に選べる女性を増やすこと」をミッションに、<br>
+        写真とブランディングを通じて女性クリエイターの自己表現とビジネス成長をサポートしています。<br><br>
+        お菓子教室の先生やハンドメイド作家、フリーランス講師の方々が、<br>
+        自分らしい世界観で発信し、理想のお客様に選ばれるブランドを築けるよう、<br>
+        フォト・発信・ブランド設計をトータルで支援しています。
+      </p>
+    </div>
+  </section>
+
+  <!-- Mission / Vision / Value -->
+  <section class="about-section mvv">
+    <div class="container">
+      <h2 class="section__title">Mission / Vision / Value</h2>
+      <div class="mvv__grid">
+        <div class="mvv__card">
+          <span class="mvv__label">Mission</span>
+          <p class="mvv__text">「わたし」として人生を自由に選べる女性を増やす。写真と発信を通して、自分の世界観で生きる女性を応援します。</p>
+        </div>
+        <div class="mvv__card">
+          <span class="mvv__label">Vision</span>
+          <p class="mvv__text">世界観フォトと空間づくりで、日本中の女性が自分の感性を仕事にできる社会をつくる。</p>
+        </div>
+        <div class="mvv__card">
+          <span class="mvv__label">Value</span>
+          <ul style="list-style:none;padding:0;margin:0;">
+            <li class="mvv__text" style="margin-bottom:.5rem;">感性を大切にする</li>
+            <li class="mvv__text" style="margin-bottom:.5rem;">自分らしさを表現する</li>
+            <li class="mvv__text" style="margin-bottom:.5rem;">信頼と誠実さ</li>
+            <li class="mvv__text">共に育つ</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Info -->
+  <section class="about-section company">
+    <div class="container">
+      <h2 class="section__title">会社情報</h2>
+      <table class="company__table">
+        <tr>
+          <th>会社名</th>
+          <td>株式会社 Photelier（フォトリエ）</td>
+        </tr>
+        <tr>
+          <th>代表者名</th>
+          <td>尾形 幸恵</td>
+        </tr>
+        <tr>
+          <th>開業</th>
+          <td>2017年10月</td>
+        </tr>
+        <tr>
+          <th>法人設立</th>
+          <td>2025年12月</td>
+        </tr>
+        <tr>
+          <th>所在地</th>
+          <td>埼玉県さいたま市浦和区</td>
+        </tr>
+        <tr>
+          <th>事業内容</th>
+          <td>
+            フォト講座「Photelier Academy」の企画・運営<br>
+            世界観フォトプロデュース<br>
+            商品・店舗撮影、映像制作<br>
+            ブランドディレクション、空間ディスプレイ提案<br>
+            SNSブランディングおよび発信支援
+          </td>
+        </tr>
+        <tr>
+          <th>保有資格</th>
+          <td>フォトマスター検定2級</td>
+        </tr>
+        <tr>
+          <th>主な実績</th>
+          <td>
+            積水ハウス株式会社<br>
+            株式会社ハウジングステージ<br>
+            一般社団法人ANDMAMACO<br>
+            株式会社liketory<br>
+            株式会社CREAVE<br>
+            フォトネクスト 登壇
+          </td>
+        </tr>
+        <tr>
+          <th>メール</th>
+          <td><a href="mailto:info@photelier-academy.com" style="color:var(--blue);">info@photelier-academy.com</a></td>
+        </tr>
+        <tr>
+          <th>ウェブサイト</th>
+          <td><a href="https://photelier.jp" style="color:var(--blue);">photelier.jp</a></td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <p class="footer__logo">Photelier</p>
+        <p class="footer__tagline">0.2秒で心をつかむ世界観フォトグラファー・講師 Ogata Sachie</p>
+      </div>
+      <nav class="footer__nav">
+        <a href="index.html#services">サービス</a>
+        <a href="index.html#works">撮影事例</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#contact">お問い合わせ</a>
+        <a href="about.html">会社概要</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://www.instagram.com/photostudio_fairytale/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+          </svg>
+        </a>
+      </div>
+      <p class="footer__copy">©Photelier / produce by Ogata Sachie</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
