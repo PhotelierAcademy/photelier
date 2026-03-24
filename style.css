@@ -1300,8 +1300,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    Responsive
    ===================================================== */
 @media (max-width: 960px) {
-  .hero { justify-content: center; }
-  .hero__content { padding: 2rem 1.5rem; text-align: center; max-width: 100%; }
+  .hero { justify-content: flex-start; background-position: 35% top; }
+  .hero__content { padding: 5rem 1.5rem 2rem; text-align: center; max-width: 100%; }
   .hero__rule { justify-content: center; }
   .hero__buttons { justify-content: center; }
   .services__grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
