@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Photelier</title>
+  <meta name="description" content="Photelier（フォトリエ）の作品ギャラリー。Ogata Sachieが撮影した世界観フォトの作品集です。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400&family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Gallery Hero ── */
+    .gallery-hero {
+      background: var(--bg-hero);
+      padding: 8rem 0 4.5rem;
+      text-align: center;
+    }
+    .gallery-hero__eyebrow {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: .72rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+    }
+    .gallery-hero__title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 300;
+      color: var(--text);
+      letter-spacing: .12em;
+      line-height: 1;
+      margin-bottom: 1.2rem;
+    }
+    .gallery-hero__sub {
+      font-family: var(--font-jp);
+      font-size: .88rem;
+      color: var(--text-mid);
+      font-weight: 300;
+      letter-spacing: .06em;
+    }
+
+    /* ── Grid Section ── */
+    .gallery-section {
+      padding: 4rem 0 7rem;
+      background: var(--bg);
+    }
+    .gallery-grid {
+      columns: 3 260px;
+      column-gap: 1rem;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      overflow: hidden;
+      cursor: zoom-in;
+      position: relative;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 6px;
+      transition: transform .55s ease, filter .4s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.04);
+      filter: brightness(.93);
+    }
+
+    /* ── Lightbox ── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(28, 38, 46, .93);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      cursor: zoom-out;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox__img {
+      max-width: min(92vw, 960px);
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.4);
+    }
+    .lightbox__close {
+      position: fixed;
+      top: 1.4rem;
+      right: 1.8rem;
+      background: none;
+      border: none;
+      color: rgba(255,255,255,.8);
+      font-size: 2rem;
+      font-weight: 300;
+      cursor: pointer;
+      line-height: 1;
+      transition: color .2s;
+    }
+    .lightbox__close:hover { color: #fff; }
+
+    /* ── Instagram CTA ── */
+    .insta-cta {
+      background: var(--bg-alt);
+      padding: 5.5rem 0;
+      text-align: center;
+    }
+    .insta-cta__icon {
+      width: 42px;
+      height: 42px;
+      margin: 0 auto 1.4rem;
+      color: var(--blue);
+    }
+    .insta-cta__handle {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--text);
+      letter-spacing: .1em;
+      margin-bottom: .6rem;
+    }
+    .insta-cta__sub {
+      font-family: var(--font-jp);
+      font-size: .85rem;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 2.2rem;
+    }
+
+    @media (max-width: 680px) {
+      .gallery-grid { columns: 2 140px; column-gap: .7rem; padding: 0 1rem; }
+      .gallery-item { margin-bottom: .7rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Photelier</a>
+      <button class="nav__hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__menu" id="menu">
+        <li>
+          <a href="index.html#services">
+            <span class="ja">サービス</span>
+            <span class="en">Services</span>
+          </a>
+        </li>
+        <li>
+          <a href="gallery.html" style="color:var(--blue);">
+            <span class="ja">ギャラリー</span>
+            <span class="en">Gallery</span>
+          </a>
+        </li>
+        <li>
+          <a href="index.html#pricing">
+            <span class="ja">料金プラン</span>
+            <span class="en">Pricing</span>
+          </a>
+        </li>
+        <li>
+          <a href="index.html#faq">
+            <span class="ja">よくある質問</span>
+            <span class="en">FAQ</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/photostudio_fairytale/" target="_blank" rel="noopener" aria-label="Instagram" class="nav__insta-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="index.html#contact" class="nav__cta">
+            <span class="ja">お問い合わせ</span>
+            <span class="en">Contact</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Gallery Hero -->
+  <section class="gallery-hero">
+    <span class="gallery-hero__eyebrow">Works &amp; Gallery</span>
+    <h1 class="gallery-hero__title">Gallery</h1>
+    <p class="gallery-hero__sub">Ogata Sachie の世界観フォト作品集</p>
+  </section>
+
+  <!-- Photo Grid -->
+  <section class="gallery-section">
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox('images/221A7036.jpg')">
+        <img src="images/221A7036.jpg" alt="Photelier 作品" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/256A4474.jpg')">
+        <img src="images/256A4474.jpg" alt="Photelier 作品" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/221A3967.jpg')">
+        <img src="images/221A3967.jpg" alt="Photelier 作品" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/256A2676.jpg')">
+        <img src="images/256A2676.jpg" alt="Photelier 作品" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/221A4908.jpg')">
+        <img src="images/221A4908.jpg" alt="Photelier 作品" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/256A0261.jpg')">
+        <img src="images/256A0261.jpg" alt="Photelier 作品" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/221A6370.jpg')">
+        <img src="images/221A6370.jpg" alt="Photelier 作品" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/256A2723-1.jpg')">
+        <img src="images/256A2723-1.jpg" alt="Photelier 作品" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/221A7736.jpg')">
+        <img src="images/221A7736.jpg" alt="Photelier 作品" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/256A3964.jpg')">
+        <img src="images/256A3964.jpg" alt="Photelier 作品" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/256A2753.jpg')">
+        <img src="images/256A2753.jpg" alt="Photelier 作品" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/256A2676_2.jpg')">
+        <img src="images/256A2676_2.jpg" alt="Photelier 作品" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/221A8203.jpg')">
+        <img src="images/221A8203.jpg" alt="Photelier 作品" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/256A4530.jpg')">
+        <img src="images/256A4530.jpg" alt="Photelier 作品" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/221A3987.jpg')">
+        <img src="images/221A3987.jpg" alt="Photelier 作品" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/256A5417.jpg')">
+        <img src="images/256A5417.jpg" alt="Photelier 作品" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/221A8298.jpg')">
+        <img src="images/221A8298.jpg" alt="Photelier 作品" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/256A8435-Edit.jpg')">
+        <img src="images/256A8435-Edit.jpg" alt="Photelier 作品" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/256A9258.jpg')">
+        <img src="images/256A9258.jpg" alt="Photelier 作品" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/256A9286.jpg')">
+        <img src="images/256A9286.jpg" alt="Photelier 作品" loading="lazy" />
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/IMG_9610-Edit.jpg')">
+        <img src="images/IMG_9610-Edit.jpg" alt="Photelier 作品" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox__close" aria-label="閉じる">×</button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="拡大表示" />
+  </div>
+
+  <!-- Instagram CTA -->
+  <section class="insta-cta">
+    <div class="insta-cta__icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+      </svg>
+    </div>
+    <p class="insta-cta__handle">@photostudio_fairytale</p>
+    <p class="insta-cta__sub">日々の撮影・ライティング・世界観づくりの裏側をInstagramで発信中</p>
+    <a href="https://www.instagram.com/photostudio_fairytale/" target="_blank" rel="noopener" class="btn btn--outline">
+      Instagramをフォローする
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <p class="footer__logo">Photelier</p>
+        <p class="footer__tagline">0.2秒で心をつかむ世界観フォトグラファー・講師 Ogata Sachie</p>
+      </div>
+      <nav class="footer__nav">
+        <a href="index.html#services">サービス</a>
+        <a href="gallery.html">ギャラリー</a>
+        <a href="index.html#pricing">料金プラン</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#contact">お問い合わせ</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://www.instagram.com/photostudio_fairytale/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+          </svg>
+        </a>
+      </div>
+      <p class="footer__copy">©Photelier / produce by Ogata Sachie</p>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      menu.classList.toggle('open');
+    });
+
+    // Lightbox
+    function openLightbox(src) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.getElementById('lightboxImg').src = '';
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>

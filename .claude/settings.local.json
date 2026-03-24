@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:sub.photelier-academy.com)",
+      "WebFetch(domain:www.instagram.com)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(python3 -c \"import os; os.chdir\\(''/Users/sachie/Desktop/Claudeコード''\\); print\\(os.listdir\\(''.''\\)\\)\")",
+      "Bash(/tmp/photelier_serve.py:*)",
+      "Bash(python3 -c \":*)",
+      "Bash(pip3 install:*)",
+      "Bash(grep -v \"^profile$\\\\|^display$\")"
+    ]
+  }
+}
