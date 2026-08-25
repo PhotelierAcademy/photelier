@@ -442,6 +442,14 @@
       letter-spacing: .04em;
     }
     .lesson-cta__btn { font-size: .85rem; padding: 1em 3em; }
+    .ll-cta__soldout {
+      font-family: var(--font-jp);
+      font-size: .98rem;
+      color: var(--blue-dark);
+      line-height: 2;
+      font-weight: 500;
+      letter-spacing: .03em;
+    }
 
     /* ── 固定フッターCTA（スマホ想定） ── */
     .lesson-fixed-cta {
@@ -465,6 +473,16 @@
     }
     .lesson-fixed-cta__price small { font-size: .68rem; color: var(--text-light); display: block; }
     .lesson-fixed-cta__btn { font-size: .72rem; padding: .8em 1.6em; white-space: nowrap; }
+    .lesson-fixed-cta__soldout {
+      font-family: var(--font-jp);
+      font-size: .74rem;
+      letter-spacing: .04em;
+      color: var(--blue-dark);
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: .7em 1.3em;
+      white-space: nowrap;
+    }
 
     @media (max-width: 720px) {
       .ll-benefits { grid-template-columns: 1fr; }
@@ -835,7 +853,7 @@
         <h2 class="ll-cta__title">秋の繁忙期に間に合わせる。<br />今日から世界観フォトを変えましょう。</h2>
         <p class="ll-cta__price">¥11,000<small> / 税込</small></p>
         <p class="ll-cta__note">8月28日（金）21:00〜 Zoom開催 ／ アーカイブ2週間限定配信</p>
-        <a href="https://buy.stripe.com/00w7sKbEt1jx8tY01reIw03" class="btn btn--primary lesson-cta__btn">お申し込みはこちら</a>
+        <p class="ll-cta__soldout">増枠分も満席となりました。<br />たくさんのお申し込みをいただき、誠にありがとうございました！</p>
       </div>
     </div>
   </section>
@@ -867,8 +885,8 @@
 
   <!-- 固定フッターCTA（モバイル） -->
   <div class="lesson-fixed-cta">
-    <span class="lesson-fixed-cta__price">¥11,000<small>8/28(金)21:00〜</small></span>
-    <a href="https://buy.stripe.com/00w7sKbEt1jx8tY01reIw03" class="btn btn--primary lesson-fixed-cta__btn">お申し込み</a>
+    <span class="lesson-fixed-cta__price">満席となりました<small>ご参加ありがとうございました</small></span>
+    <span class="lesson-fixed-cta__soldout">受付終了</span>
   </div>
 
   <script src="script.js"></script>
